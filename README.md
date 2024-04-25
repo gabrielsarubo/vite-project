@@ -17,3 +17,18 @@ Aprenderemos sobre:
 - Propriedades
 - Desestruturação
 - Children
+
+## Módulo 3 - Criação de componentes com React
+
+Chegamos às etapas de criar páginas e sub componentes, separar responsabilidades entre nossos componentes, saber como melhorar o reaproveitamento de código e estruturar melhor o nosso projeto.
+
+Aprenderemos sobre:
+
+- Criação de páginas
+- Formulário
+- Componentização
+- Separação de responsabilidades
+- Reaproveitamento de código
+- Espalhamento de propriedades
+- Utilizando constantes para tornar o app mais consistente
+- Sub componentes

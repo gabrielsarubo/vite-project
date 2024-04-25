@@ -1,0 +1,5 @@
+.TextInput {
+  border: 1px solid var(--black);
+  padding: .25rem .75rem;
+  width: 25rem;
+}
