@@ -32,3 +32,16 @@ Aprenderemos sobre:
 - Espalhamento de propriedades
 - Utilizando constantes para tornar o app mais consistente
 - Sub componentes
+
+## Módulo 4 - Roteamento
+
+Como criar, configurar e utilizar o roteamento em SPAs. Também, utilizaremos layouts para otimizar o carregamento e diminuir a repetição de código!
+
+Aprenderemos sobre:
+
+- Navegando em uma SPA
+- Configurando o projeto para usar o react-router-dom
+- Criando rotas e sub rotas
+- Rota padrão
+- Links internos
+- Criação e utilização de Layouts
