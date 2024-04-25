@@ -1,0 +1,4 @@
+.Content {
+  padding: 0.5rem 1rem;
+  padding-bottom: 2.5rem; /* creates an extra padding at the bottom so that the Footer won't overlap the content */
+}

@@ -1,0 +1,21 @@
+:root {
+  --gray: #ebebec;
+  --black: #272727;
+  --pink: #f06197;
+  --green: #36b59f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--gray);
+}
+
+body, input, textarea, button {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
