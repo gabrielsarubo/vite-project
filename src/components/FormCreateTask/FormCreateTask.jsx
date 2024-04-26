@@ -1,13 +1,14 @@
 import { useState } from "react";
 
+import { useAppContext } from "../../hooks";
 import { TextInput, Button } from "../../components";
 
 import style from "./FormCreateTask.module.css";
 
-const FormCreateTask = (props) => {
+const FormCreateTask = () => {
   const [text, setText] = useState("");
 
-  const { setTasks } = props;
+  const { addTask } = useAppContext()
 
   const onChangeText = (e) => {
     setText(e.currentTarget.value);
@@ -23,10 +24,8 @@ const FormCreateTask = (props) => {
       text: text,
     };
 
-    setTasks((currentState) => {
-      return [...currentState, task];
-    });
-
+    addTask(task)
+    
     setText("");
   };
 
