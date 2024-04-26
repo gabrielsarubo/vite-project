@@ -45,3 +45,20 @@ Aprenderemos sobre:
 - Rota padrão
 - Links internos
 - Criação e utilização de Layouts
+
+## Módulo 5 – Gerenciando estado da aplicação
+
+Aprender sobre o gerenciamento de estado local e global, utilização de hooks e gerenciamento de formulários. 
+
+Aprenderemos sobre:
+
+- O que é gerenciamento de estado
+- Renderização de listas
+- A propriedade key
+- Prop drilling
+- O que são hooks
+- useState
+- Campos controlados
+- Eventos
+- Context API
+- Custom hooks
