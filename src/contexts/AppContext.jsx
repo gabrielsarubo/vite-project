@@ -27,13 +27,29 @@ export const AppContextProvider = (props) => {
     setTasks(new_tasks)
   }
 
+  const editTask = (id, text) => {
+    const new_tasks = tasks.map(task => {
+      if (task.id !== id) {
+        return task
+      } else {
+        return {
+          ...task,
+          text,
+        }
+      }
+    })
+
+    setTasks(new_tasks)
+  }
+
   return (
     <AppContext.Provider
       value={{
         author,
         tasks,
         addTask,
-        deleteTask
+        deleteTask,
+        editTask
       }}
     >
       {children}
