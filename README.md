@@ -62,3 +62,17 @@ Aprenderemos sobre:
 - Eventos
 - Context API
 - Custom hooks
+
+## Módulo 6 – Integração com o Backend
+
+Aprender como criar um backend simulado com o JSON Server, configurar e utilizar o axios para interagir com o backend e utilizar o useEffect para lidar com sistemas externos.
+
+Aprenderemos sobre:
+
+- JSON Server
+- Scripts personalizados
+- Interação com o backend
+- Axios
+- Funções assíncronas
+- useEffect
+- Operadores de curto-circuito

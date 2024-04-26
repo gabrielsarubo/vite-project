@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+
+import { api } from "../services/api";
 
 export const AppContext = createContext({});
 
@@ -7,40 +9,58 @@ export const AppContextProvider = (props) => {
 
   const [author, setAuthor] = useState("Sarubo");
 
-  const [tasks, setTasks] = useState([
-    { id: 1, text: "Pet that dawg" },
-    { id: 2, text: "Grocery shopping" },
-    { id: 3, text: "Run some errands" },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
-  const addTask = (task) => {
-    setTasks((currentState) => {
-      return [...currentState, task];
+  const fetchTasks = async () => {
+    const { data = [] } = await api.get("/tasks");
+    setTasks([...data]);
+  };
+
+  const addTask = async (task) => {
+    const { data: new_task } = await api.post("/tasks", {
+      text: task.text,
     });
-  }
 
-  const deleteTask = (id) => {
-    const new_tasks = tasks.filter(task => {
-      return task.id !== id
-    })
-    
-    setTasks(new_tasks)
-  }
+    setTasks((currentState) => {
+      return [...currentState, new_task];
+    });
+  };
 
-  const editTask = (id, text) => {
-    const new_tasks = tasks.map(task => {
+  const deleteTask = async (id) => {
+    await api.delete(`/tasks/${id}`);
+
+    const new_tasks = tasks.filter((task) => {
+      return task.id !== id;
+    });
+
+    setTasks(new_tasks);
+  };
+
+  const editTask = async (id, text) => {
+    const { data: updated_task } = await api.put(`/tasks/${id}`, {
+      text: text,
+    });
+
+    console.log('task updated (data from API): ', updated_task)
+
+    const new_tasks = tasks.map((task) => {
       if (task.id !== id) {
-        return task
+        return task;
       } else {
         return {
-          ...task,
-          text,
-        }
+          ...updated_task,
+          text: updated_task.text,
+        };
       }
-    })
+    });
 
-    setTasks(new_tasks)
-  }
+    setTasks(new_tasks);
+  };
+
+  useEffect(() => {
+    console.log("AppContext was mounted.");
+    fetchTasks();
+  }, []);
 
   return (
     <AppContext.Provider
@@ -49,7 +69,7 @@ export const AppContextProvider = (props) => {
         tasks,
         addTask,
         deleteTask,
-        editTask
+        editTask,
       }}
     >
       {children}
